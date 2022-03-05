@@ -1,12 +1,13 @@
 package com.infogalaxy.employeewagebuilder;
-
 import java.util.Random;
-
 public class EmployeeWageBuilder {
     public static void main(String[] args) {
         //Welcome message for User
         System.out.println("Welcome to Employee Wage Calculation Problem");
-
+        //UC-2 Calculate Daily Wage
+        final int WAGE_PER_HR = 20;
+        final int FULL_DAY_HR =  8;
+        int total_wage = 0;
         //UC-1 Employee Attendance
         Random random = new Random();
         int empAttendance = random.nextInt()%2;
@@ -15,6 +16,8 @@ public class EmployeeWageBuilder {
             System.out.println("Employee is Absent.");
         } else {
             System.out.println("Employee is Present.");
+            total_wage = WAGE_PER_HR * FULL_DAY_HR;
         }
+        System.out.println("Total Wage = "+ total_wage);
     }
 }
